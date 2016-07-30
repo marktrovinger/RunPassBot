@@ -1,0 +1,2 @@
+# Run-Pass Bot
+Run-Pass Bot is a twitter bot that is designed to make predictions if a team is more likely to call a running play or a passing play. The model is trained on the play-by-play data from the 2009-2015 seasons. The twitter bot will use a (near) real-time data source to tweet predictions.
