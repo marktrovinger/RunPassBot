@@ -4,6 +4,7 @@
 ## 	
 import pandas as pd 
 import feather
+from tpot import TPOT
 from sklearn.preprocessing import LabelEncoder
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.cross_validation import train_test_split
@@ -21,3 +22,7 @@ df['PlayType'] = df['PlayType'].map({'Run' : 0, 'Pass': 1})
 
 # Split the dataset into seperate test and train sets
 (train_X, test_X, train_y, test_y) = train_test_split(df[features], df[target], test_size = 0.2)
+
+tpot = TPOT(generations=5)
+
+tpot.fit(train_X, train_y)
