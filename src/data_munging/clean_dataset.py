@@ -6,6 +6,7 @@
 import pandas as pd
 import os
 import glob
+import feather
 
 columns_to_remove = ['Unnamed: 0', 'Date', 'GameID', 'Drive', 'time', 'TimeUnder', 'TimeSecs',
  					'PlayTimeDiff', 'SideofField', 'yrdln','ydsnet','GoalToGo', 'FirstDown','posteam',
@@ -39,3 +40,4 @@ final_clean_dataset = all_raw_dataframe[all_raw_dataframe['PlayType'].isin(play_
 # Now that we have a much cleaner dataset, we can save the dataframe to our processed data directory in
 # the csv format
 final_clean_dataset.to_csv(path_to_processed_data + 'clean_dataset.csv')
+feather.write_dataframe(final_clean_dataset, path_to_processed_data+ 'clean_dataset.feather')
