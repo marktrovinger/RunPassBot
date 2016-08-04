@@ -14,7 +14,7 @@ path_to_processed_data = '../../data/processed/'
 df = feather.read_dataframe(path_to_processed_data + 'clean_dataset.feather')
 
 # The features and target that we will use for our analysis
-features = ['ScoreDiff', 'down', 'qtr', 'yrdstogo', 'yrdline100']
+features = ['ScoreDiff', 'down', 'qtr', 'ydstogo', 'yrdline100']
 target = 'PlayType'
 
 # Since the algorithms won't understand the PassType column as is, we will map to an integer instead
