@@ -8,8 +8,8 @@ from sklearn.cross_validation import train_test_split
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.externals import joblib
 
-path_to_processed_data = '../../data/processed/'
-path_to_model ='../models'
+path_to_processed_data = '../data/processed/'
+path_to_model ='../models/'
 
 df = feather.read_dataframe(path_to_processed_data + 'clean_dataset.feather')
 
