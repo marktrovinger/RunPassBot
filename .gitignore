@@ -1,5 +1,3 @@
-# We don't want to upload our data sets
-data/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
