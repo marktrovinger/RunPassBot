@@ -12,5 +12,5 @@ from tpot import TPOT
 def generate_model(generations, verbosity, train_X, train_y):
 	tpot_generator = TPOT(generations=generations, verbosity=verbosity)
 	tpot_generator.fit(train_X, train_y)
-
+	tpot_generator.export('tpot_model' + generations + verbosity + '.py')
 
