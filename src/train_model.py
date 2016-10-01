@@ -3,7 +3,7 @@
 #
 ## 	
 import pandas as pd 
-import feather
+#import feather
 from sklearn.cross_validation import train_test_split
 from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.externals import joblib
@@ -11,7 +11,8 @@ from sklearn.externals import joblib
 path_to_processed_data = '../data/processed/'
 path_to_model ='../models/'
 
-df = feather.read_dataframe(path_to_processed_data + 'clean_dataset.feather')
+df = pd.read_csv(path_to_processed_data + 'clean_dataset.csv')
+#df = feather.read_dataframe(path_to_processed_data + 'clean_dataset.feather')
 
 # The features and target that we will use for our analysis
 features = ['ScoreDiff', 'down', 'qtr', 'ydstogo', 'yrdline100']
