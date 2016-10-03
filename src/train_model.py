@@ -11,7 +11,7 @@ from sklearn.externals import joblib
 path_to_processed_data = '../data/processed/'
 path_to_model ='../models/'
 
-def train_model():
+def load_dataset():
 	df = pd.read_csv(path_to_processed_data + 'clean_dataset.csv')
 	#df = feather.read_dataframe(path_to_processed_data + 'clean_dataset.feather')
 
@@ -24,7 +24,9 @@ def train_model():
 
 	# Split the dataset into seperate test and train sets
 	(train_X, test_X, train_y, test_y) = train_test_split(df[features], df[target], test_size = 0.2)
+	return train_X, test_X, train_y, test_y
 
+def train_model():
 	# Create the GradientBoostingClassifier, set with the weights from TPOT, and then fit the model to the 
 	# dataset that we have
 	gbc = GradientBoostingClassifier(learning_rate=0.16, max_features=1.0, 
@@ -33,5 +35,3 @@ def train_model():
 
 	# Save the model for later use
 	joblib.dump(gbc, path_to_model + 'gbc.pkl')
-
-	return train_X, test_X, train_y, test_y
