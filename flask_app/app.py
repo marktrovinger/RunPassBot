@@ -11,7 +11,7 @@ model_dir = '.../models/gbc.pkl'
 gbc_clf = joblib.load(model_dir)
 
 def classify(dataframe):
-	pass
+	return gbc_clf.predict(dataframe)
 
 
 
